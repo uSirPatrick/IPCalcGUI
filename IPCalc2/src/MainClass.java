@@ -3,8 +3,11 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-System.out.println("Testing");
-IPCalcMenu.menuOut();
+		IPCalcMenu Start;
+		Start = new IPCalcMenu();
+		
+		Start.menuStart();
+
 	}
 
 }

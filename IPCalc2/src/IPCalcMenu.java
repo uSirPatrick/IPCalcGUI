@@ -1,8 +1,11 @@
 
-
 public class IPCalcMenu {
-		public static String menuOut(){
-	System.out.println("Make a selection:");
-	return null;
+	
+	void menuStart(){
+		System.out.println("Make a selection:");
+		System.out.println("IP Calculator");
+		System.out.println("Bit Chart");
+		System.out.println("Exit");
 	}
+
 }
