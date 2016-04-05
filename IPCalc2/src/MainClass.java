@@ -8,6 +8,7 @@ public class MainClass {
 		Start = new IPCalcMenu();
 		
 		Start.menuStart();
+		Start.userInput();
 
 	}
 
