@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 public class IPCalcMenu {
 	
 	void menuStart(){
