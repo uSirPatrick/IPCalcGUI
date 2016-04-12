@@ -1,5 +1,9 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
+
+
+
+
 public class IPCalcMenu {
 	
 	
@@ -17,6 +21,8 @@ public class IPCalcMenu {
 	
 	public void userInput(){
 		
+		
+		
 		do{
 	
 		try{
@@ -29,8 +35,11 @@ public class IPCalcMenu {
 		}
 		
 		if(firstNumber == 2){
-			//call ipCalcBitChart class
-			System.out.println("You chose 2 for Bit Chart");
+			//call IpChart class
+			IpChart Start;
+			Start = new IpChart();
+			
+			Start.chartStart();
 		}
 		
 		if(firstNumber == 3){
@@ -69,10 +78,9 @@ public class IPCalcMenu {
 			
 		
 		}catch(InputMismatchException e){
-			System.out.println("Invalid input");
+			System.out.println("Invalid input: Make another selection ");
 		}
 		
-
 		
 	
 	}while(true);

@@ -1,6 +1,6 @@
 public class IpChart 
 {
-	public static void main(String[] args) 
+	public static void chartStart() 
 	{
 		int baseNumber = 2;
 		int bitNumber = 1;
