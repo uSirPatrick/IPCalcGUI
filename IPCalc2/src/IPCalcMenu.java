@@ -59,17 +59,17 @@ public class IPCalcMenu {
 		
 		if(firstNumber == 6){
 			//Exit program
-			System.out.println("You chose 6 for Exit");
+			System.out.println("Goodbye");
 		}
 		
 		if(firstNumber > 6){
 			//Not an option
-			System.out.println("That is not a valid option");
+			System.out.println("That is not a valid option: Pick a number between 1 and 6");
 		}
 		
 		if(firstNumber < 1){
 			//Not an option
-			System.out.println("That is not a valid option");
+			System.out.println("That is not a valid option: Pick a number between 1 and 6");
 		}
 		
 		if(firstNumber == 6){
