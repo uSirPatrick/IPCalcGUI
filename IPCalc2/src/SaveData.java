@@ -1,19 +1,48 @@
+import java.util.Formatter;
 import java.util.Scanner;
 
 public class SaveData {
 	
-	public void startSave(){
+	public static int testNum = 0;
+
+	public static void startSave(){
+		System.out.println("Input number for storing");
 		
-		int testNum = 0;
-		
-		System.out.println("Input number to write to file");
 		Scanner input = new Scanner(System.in);
 		int testNumber = input.nextInt();
-		
 		testNum = testNumber;
+		 
 		
-		System.out.println("you chose the number " + testNum);
-		System.out.println("Variable testNum = " + testNum);
-		System.out.println("Variable testNumber = " + testNumber);
+		
+		final Formatter x;
+		
+		try{
+			x = new Formatter("saveData.txt");
+			System.out.println("You created a file");
+		}catch(Exception e){
+			System.out.println("You got an error");
+		}
+		
+		
 	}
+	
+	private Formatter x;
+	
+	public void openFile(){
+		try{
+			x = new Formatter("saveData.txt");
+		}
+		catch(Exception e){
+			System.out.println("You have an error");
+		}
+	}
+	
+	public void addRecords(){
+		x.format("%s", testNum);
+	}
+	
+	public void closeFile(){
+		x.close();
+	}
+	
 }

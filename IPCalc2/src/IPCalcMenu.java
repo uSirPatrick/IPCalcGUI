@@ -53,6 +53,9 @@ public class IPCalcMenu {
 			Start = new SaveData();
 			
 			Start.startSave();
+			Start.openFile();
+			Start.addRecords();
+			Start.closeFile();
 		}
 		
 		if(firstNumber == 5){
