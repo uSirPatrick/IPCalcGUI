@@ -49,7 +49,10 @@ public class IPCalcMenu {
 		
 		if(firstNumber == 4){
 			//Call "Save Data" class
-			System.out.println("You chose 4 for Save Data");
+			SaveData Start;
+			Start = new SaveData();
+			
+			Start.startSave();
 		}
 		
 		if(firstNumber == 5){
