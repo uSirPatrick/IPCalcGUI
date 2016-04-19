@@ -31,7 +31,10 @@ public class IPCalcMenu {
 		
 		if(firstNumber == 1){
 			//call "mother of all subroutines"
-			System.out.println("You chose 1 for IP Address and Netmask");
+			InputAndValidation Start;
+			Start = new InputAndValidation();
+			
+			Start.IpInput();
 		}
 		
 		if(firstNumber == 2){
