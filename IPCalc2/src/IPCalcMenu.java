@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.IOException;
 import java.util.InputMismatchException;
 
 
@@ -19,7 +20,7 @@ public class IPCalcMenu {
 		
 	}
 	
-	public void userInput(){
+	public void userInput() throws IOException{
 		
 		
 		
@@ -55,15 +56,15 @@ public class IPCalcMenu {
 			SaveData Start;
 			Start = new SaveData();
 			
-			Start.startSave();
-			Start.openFile();
-			Start.addRecords();
-			Start.closeFile();
+			Start.StartWrite();
 		}
 		
 		if(firstNumber == 5){
 			//Call "Read Saved Data" class
-			System.out.println("You chose 5 for Read Saved Data");
+			ReadSavedData Start;
+			Start = new ReadSavedData();
+			
+			Start.StartRead();
 		}
 		
 		if(firstNumber == 6){
