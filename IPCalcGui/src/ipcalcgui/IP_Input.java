@@ -50,6 +50,7 @@ public class IP_Input extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("IP Address Input");
 
         jLabel1.setText("Input IP Address:");
 
