@@ -90,6 +90,11 @@ public class IP_Input extends javax.swing.JFrame {
         jLabel10.setText("/");
 
         jButton2.setText("Calculate Networks");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText("Save");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -238,6 +243,24 @@ public class IP_Input extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        int[] IP_Array = new int[4];
+        IP_Array[0] = Integer.parseInt(IP_One.getText());
+        IP_Array[1] = Integer.parseInt(IP_Two.getText());
+        IP_Array[2] = Integer.parseInt(IP_Three.getText());
+        IP_Array[3] = Integer.parseInt(IP_Four.getText());  
+        String IP_Class = "";
+        if(IP_Array[0] >= 1 && IP_Array[0] <= 126){
+        IP_Class = "A";
+        };        
+        if(IP_Array[0] >= 128 && IP_Array[0] <= 191){
+        IP_Class = "B";
+        };
+        if(IP_Array[0] >= 192 && IP_Array[0] <= 223){
+        IP_Class = "C";
+        };        
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
