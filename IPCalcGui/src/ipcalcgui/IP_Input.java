@@ -246,6 +246,8 @@ public class IP_Input extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         int[] IP_Array = new int[4];
+        int[] NM_Array = new int[4];
+        int NM_Bits = 0;
         IP_Array[0] = Integer.parseInt(IP_One.getText());
         IP_Array[1] = Integer.parseInt(IP_Two.getText());
         IP_Array[2] = Integer.parseInt(IP_Three.getText());
@@ -259,7 +261,69 @@ public class IP_Input extends javax.swing.JFrame {
         };
         if(IP_Array[0] >= 192 && IP_Array[0] <= 223){
         IP_Class = "C";
-        };        
+        };
+        NM_Array[0] = Integer.parseInt(NM_One.getText());
+        NM_Array[1] = Integer.parseInt(NM_Two.getText());
+        NM_Array[2] = Integer.parseInt(NM_Three.getText());
+        NM_Array[3] = Integer.parseInt(NM_Four.getText());
+        String temp_NM_One = "";
+        String temp_NM_Two = "";
+        String temp_NM_Three = "";
+        String temp_NM_Four = "";
+        for(int j = 0; j < 8; j++)
+        {
+            if(NM_Array[0] % 2 == 1)
+            {
+            temp_NM_One = '1' + temp_NM_One;
+            }
+            if(NM_Array[0] % 2 == 0)
+            {
+            temp_NM_One = '0' + temp_NM_One;
+            }
+            NM_Array[0] = NM_Array[0]/2;
+        }
+                for(int j = 0; j < 8; j++)
+        {
+            if(NM_Array[1] % 2 == 1)
+            {
+            temp_NM_Two = '1' + temp_NM_Two;
+            }
+            if(NM_Array[1] % 2 == 0)
+            {
+            temp_NM_Two = '0' + temp_NM_Two;
+            }
+            NM_Array[1] = NM_Array[1]/2;
+        }
+                for(int j = 0; j < 8; j++)
+        {
+            if(NM_Array[2] % 2 == 1)
+            {
+            temp_NM_Three = '1' + temp_NM_Three;
+            }
+            if(NM_Array[2] % 2 == 0)
+            {
+            temp_NM_Three = '0' + temp_NM_Three;
+            }
+            NM_Array[2] = NM_Array[2]/2;
+        }        
+                for(int j = 0; j < 8; j++)
+        {
+            if(NM_Array[3] % 2 == 1)
+            {
+            temp_NM_Four = '1' + temp_NM_Four;
+            }
+            if(NM_Array[3] % 2 == 0)
+            {
+            temp_NM_Four = '0' + temp_NM_Four;
+            }
+            NM_Array[3] = NM_Array[3]/2;
+        }
+         int NM_Bin_Array[] = new int[4];
+         NM_Bin_Array[0] = Integer.parseInt(temp_NM_One);
+         NM_Bin_Array[1] = Integer.parseInt(temp_NM_Two);
+         NM_Bin_Array[2] = Integer.parseInt(temp_NM_Three);
+         NM_Bin_Array[3] = Integer.parseInt(temp_NM_Four);
+         
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**
