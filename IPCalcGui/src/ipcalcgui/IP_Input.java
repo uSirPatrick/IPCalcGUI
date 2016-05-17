@@ -245,6 +245,11 @@ public class IP_Input extends javax.swing.JFrame {
         IP_Class = "C";
         };
         
+        if(NM_Bits != null)
+        {
+        NM_Bits_Int = Integer.parseInt(NM_Bits.getText());
+        }
+        
         if(NM_Bits == null){
         NM_Array[0] = Integer.parseInt(NM_One.getText());
         NM_Array[1] = Integer.parseInt(NM_Two.getText());
@@ -470,7 +475,23 @@ public class IP_Input extends javax.swing.JFrame {
             NM_Bits_Int =+ 1;
             NM_Bin_Array[3] =- 1;
             }
-        }    
+        }
+        if(NM_Bits_Int >= 8 && NM_Bits_Int <= 15 && IP_Class != "A")
+        {
+        ERROR frame = new ERROR();
+        frame.setVisible(true);
+        }
+        if(NM_Bits_Int >= 16 && NM_Bits_Int <= 23 && IP_Class != "B")
+        {
+        ERROR frame = new ERROR();
+        frame.setVisible(true);        
+        }        
+        if(NM_Bits_Int >= 24 && NM_Bits_Int <= 30 && IP_Class != "C")
+        {
+        ERROR frame = new ERROR();
+        frame.setVisible(true);        
+        }        
+        
         IP_Array[0] = Integer.toString(IP_ArrayTemp[0]);
         IP_Array[1] = Integer.toString(IP_ArrayTemp[1]);
         IP_Array[2] = Integer.toString(IP_ArrayTemp[2]);
@@ -504,7 +525,7 @@ public class IP_Input extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-   
+   IP_Array();
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**
