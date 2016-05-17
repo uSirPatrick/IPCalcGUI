@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package ipcalcgui;
 
 import java.io.BufferedWriter;
@@ -245,9 +246,10 @@ public class IP_Input extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+
         int[] IP_Array = new int[4];
         int[] NM_Array = new int[4];
-        int NM_Bits = 0;
+        int NM_Bits_Int = 0;
         IP_Array[0] = Integer.parseInt(IP_One.getText());
         IP_Array[1] = Integer.parseInt(IP_Two.getText());
         IP_Array[2] = Integer.parseInt(IP_Three.getText());
@@ -255,13 +257,15 @@ public class IP_Input extends javax.swing.JFrame {
         String IP_Class = "";
         if(IP_Array[0] >= 1 && IP_Array[0] <= 126){
         IP_Class = "A";
-        };        
+        }        
         if(IP_Array[0] >= 128 && IP_Array[0] <= 191){
         IP_Class = "B";
-        };
+        }
         if(IP_Array[0] >= 192 && IP_Array[0] <= 223){
         IP_Class = "C";
-        };
+        }
+        /*
+        if(NM_Bits = null){
         NM_Array[0] = Integer.parseInt(NM_One.getText());
         NM_Array[1] = Integer.parseInt(NM_Two.getText());
         NM_Array[2] = Integer.parseInt(NM_Three.getText());
@@ -270,6 +274,7 @@ public class IP_Input extends javax.swing.JFrame {
         String temp_NM_Two = "";
         String temp_NM_Three = "";
         String temp_NM_Four = "";
+        
         for(int j = 0; j < 8; j++)
         {
             if(NM_Array[0] % 2 == 1)
@@ -324,6 +329,167 @@ public class IP_Input extends javax.swing.JFrame {
          NM_Bin_Array[2] = Integer.parseInt(temp_NM_Three);
          NM_Bin_Array[3] = Integer.parseInt(temp_NM_Four);
          
+         if(NM_Bin_Array[0] >= 10000000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[0] =- 10000000;
+         }
+         if(NM_Bin_Array[0] >= 1000000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[0] =- 1000000;
+        }  
+         if(NM_Bin_Array[0] >= 100000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[0] =- 100000;
+         }
+         if(NM_Bin_Array[0] >= 10000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[0] =- 10000;
+         }
+         if(NM_Bin_Array[0] >= 1000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[0] =- 1000;
+         }
+         if(NM_Bin_Array[0] >= 100)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[0] =- 100;
+         }
+         if(NM_Bin_Array[0] >= 10)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[0] =- 10;
+         }
+         if(NM_Bin_Array[0] >= 1)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[1] =- 1;
+         }
+         if(NM_Bin_Array[1] >= 10000000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[1] =- 10000000;
+         }
+         if(NM_Bin_Array[1] >= 1000000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[1] =- 1000000;
+        }  
+         if(NM_Bin_Array[1] >= 100000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[1] =- 100000;
+         }
+         if(NM_Bin_Array[1] >= 10000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[1] =- 10000;
+         }
+         if(NM_Bin_Array[1] >= 1000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[1] =- 1000;
+         }
+         if(NM_Bin_Array[1] >= 100)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[1] =- 100;
+         }
+         if(NM_Bin_Array[1] >= 10)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[1] =- 10;
+         }
+         if(NM_Bin_Array[1] >= 1)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[1] =- 1;
+         }
+         if(NM_Bin_Array[2] >= 10000000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[2] =- 10000000;
+         }
+         if(NM_Bin_Array[2] >= 1000000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[2] =- 1000000;
+        }  
+         if(NM_Bin_Array[2] >= 100000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[2] =- 100000;
+         }
+         if(NM_Bin_Array[2] >= 10000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[2] =- 10000;
+         }
+         if(NM_Bin_Array[2] >= 1000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[2] =- 1000;
+         }
+         if(NM_Bin_Array[2] >= 100)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[2] =- 100;
+         }
+         if(NM_Bin_Array[2] >= 10)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[2] =- 10;
+         }
+         if(NM_Bin_Array[2] >= 1)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[2] =- 1;
+         }
+         if(NM_Bin_Array[3] >= 10000000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[3] =- 10000000;
+         }
+         if(NM_Bin_Array[3] >= 1000000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[3] =- 1000000;
+        }  
+         if(NM_Bin_Array[3] >= 100000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[3] =- 100000;
+         }
+         if(NM_Bin_Array[3] >= 10000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[3] =- 10000;
+         }
+         if(NM_Bin_Array[3] >= 1000)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[3] =- 1000;
+         }
+         if(NM_Bin_Array[3] >= 100)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[3] =- 100;
+         }
+         if(NM_Bin_Array[3] >= 10)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[3] =- 10;
+         }
+         if(NM_Bin_Array[3] >= 1)
+         {
+           NM_Bits_Int =+ 1;
+           NM_Bin_Array[3] =- 1;
+          }
+ */       
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**
