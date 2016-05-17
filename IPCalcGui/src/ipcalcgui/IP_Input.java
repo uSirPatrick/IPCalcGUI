@@ -225,45 +225,25 @@ public class IP_Input extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        File newFile = new File("C:/Users/Public/Documents/SavedData.txt");
-        try{
-            newFile.createNewFile();
-        }catch(IOException e1){
-            e1.printStackTrace();
-        }
-        try
-        {
-            FileWriter fileW = new FileWriter(newFile);
-            BufferedWriter buffW = new BufferedWriter(fileW);
-            buffW.write("This is a test");
-            buffW.close();
-
-        }catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_jButton3MouseClicked
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-
-        int[] IP_Array = new int[4];
-        int[] NM_Array = new int[4];
+    private String[] IP_Array(){
+         String[] IP_Array = new String[4];
+         int[] IP_ArrayTemp = new int[4]; 
+         int[] NM_Array = new int[4];
         int NM_Bits_Int = 0;
-        IP_Array[0] = Integer.parseInt(IP_One.getText());
-        IP_Array[1] = Integer.parseInt(IP_Two.getText());
-        IP_Array[2] = Integer.parseInt(IP_Three.getText());
-        IP_Array[3] = Integer.parseInt(IP_Four.getText());  
+        IP_ArrayTemp[0] = Integer.parseInt(IP_One.getText());
+        IP_ArrayTemp[1] = Integer.parseInt(IP_Two.getText());
+        IP_ArrayTemp[2] = Integer.parseInt(IP_Three.getText());
+        IP_ArrayTemp[3] = Integer.parseInt(IP_Four.getText());  
         String IP_Class = "";
-        if(IP_Array[0] >= 1 && IP_Array[0] <= 126){
+        if(IP_ArrayTemp[0] >= 1 && IP_ArrayTemp[0] <= 126){
         IP_Class = "A";
-        }        
-        if(IP_Array[0] >= 128 && IP_Array[0] <= 191){
+        };        
+        if(IP_ArrayTemp[0] >= 128 && IP_ArrayTemp[0] <= 191){
         IP_Class = "B";
-        }
-        if(IP_Array[0] >= 192 && IP_Array[0] <= 223){
+        };
+        if(IP_ArrayTemp[0] >= 192 && IP_ArrayTemp[0] <= 223){
         IP_Class = "C";
-        }
+        };
         
         if(NM_Bits == null){
         NM_Array[0] = Integer.parseInt(NM_One.getText());
@@ -491,6 +471,40 @@ public class IP_Input extends javax.swing.JFrame {
             NM_Bin_Array[3] =- 1;
             }
         }    
+        IP_Array[0] = Integer.toString(IP_ArrayTemp[0]);
+        IP_Array[1] = Integer.toString(IP_ArrayTemp[1]);
+        IP_Array[2] = Integer.toString(IP_ArrayTemp[2]);
+        IP_Array[3] = Integer.toString(IP_ArrayTemp[3]);
+        return IP_Array;
+    } 
+    
+    private static void SaveData(String[] IP_Array){
+        File newFile = new File("C:/Users/Public/Documents/SavedData.txt");
+        String IP_St = IP_Array[0] + IP_Array[1] + IP_Array[2] + IP_Array[3];
+        try{
+            newFile.createNewFile();
+        }catch(IOException e1){
+            e1.printStackTrace();
+        }
+        try
+        {
+            FileWriter fileW = new FileWriter(newFile);
+            BufferedWriter buffW = new BufferedWriter(fileW);
+            buffW.write(IP_St);
+            buffW.close();
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+         String[] IP_Array = IP_Array();
+        SaveData(IP_Array);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+   
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**
